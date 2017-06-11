@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tegobi Game", "Tegobi Game.csproj", "{6E2104EF-9E55-3F63-87A9-4241EAAA3512}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tegobi Game", "Assembly-CSharp.csproj", "{7FEEF899-094E-6959-ADED-04DF0D4707E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,12 +9,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6E2104EF-9E55-3F63-87A9-4241EAAA3512}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6E2104EF-9E55-3F63-87A9-4241EAAA3512}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6E2104EF-9E55-3F63-87A9-4241EAAA3512}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6E2104EF-9E55-3F63-87A9-4241EAAA3512}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FEEF899-094E-6959-ADED-04DF0D4707E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FEEF899-094E-6959-ADED-04DF0D4707E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FEEF899-094E-6959-ADED-04DF0D4707E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FEEF899-094E-6959-ADED-04DF0D4707E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal
