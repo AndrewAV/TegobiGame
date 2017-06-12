@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Controls : MonoBehaviour {
+
+
+    private float moveVelocity;
     public float speed=5f;
     public bool moveright;
     public bool moveleft;
@@ -65,18 +68,18 @@ public class Controls : MonoBehaviour {
             rb.AddForce(new Vector2(0, jumpForce));
             Space = false;
         }
+        moveVelocity = 0f;
         if (Input.GetKey(KeyCode.LeftArrow) || moveleft)
         {
             anim.SetBool("Speed", true);
-            rb.velocity = new Vector2(-speed, rb.velocity.y);
-
+            moveVelocity = -speed;
         }
         else if (Input.GetKey(KeyCode.RightArrow) || moveright)
         {
             anim.SetBool("Speed", true);
-            rb.velocity = new Vector2(speed, rb.velocity.y);
-
+            moveVelocity = speed; 
         }
+        rb.velocity = new Vector2(moveVelocity, rb.velocity.y);
         if ((Input.GetKey(KeyCode.RightArrow) || moveright) && !facingRight)
         {
             Flip();

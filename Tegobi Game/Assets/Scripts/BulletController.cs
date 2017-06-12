@@ -6,6 +6,7 @@ public class BulletController : MonoBehaviour {
 
     public Vector2 speed;
     Rigidbody2D rg;
+    public int damage;
 	// Use this for initialization
 	void Start ()
     {
@@ -21,7 +22,7 @@ public class BulletController : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D other) {
 
         if (other.gameObject.CompareTag("Enemy")) {
-            Destroy(other.gameObject);
+            other.gameObject.GetComponent<EnemyHealthController>().hurtEnemy(damage);
             Destroy(gameObject);
         }
 
