@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\FollowIA.cs" />
      <Compile Include="Assets\Scripts\HealthBar.cs" />
      <Compile Include="Assets\Scripts\HealthController.cs" />
+     <Compile Include="Assets\Scripts\Hole.cs" />
      <Compile Include="Assets\Scripts\HurtPlayerOnContact.cs" />
      <Compile Include="Assets\Scripts\ScoreManager.cs" />
      <Compile Include="Assets\Scripts\Touch.cs" />

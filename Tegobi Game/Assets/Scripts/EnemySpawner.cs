@@ -19,7 +19,7 @@ public class EnemySpawner : MonoBehaviour {
 		if(Time.time > NextSpawn)
         {
             NextSpawn = Time.time + spawnRate;
-            randX = Random.Range(-12f, 4f);
+            randX = Random.Range(-33f, 28f);
             WhereToSpam = new Vector2(randX, transform.position.y);
             Instantiate(enemy, WhereToSpam,Quaternion.identity);
         }

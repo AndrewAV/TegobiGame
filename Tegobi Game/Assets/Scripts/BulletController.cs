@@ -25,6 +25,11 @@ public class BulletController : MonoBehaviour {
             other.gameObject.GetComponent<EnemyHealthController>().hurtEnemy(damage);
             Destroy(gameObject);
         }
+        if (other.gameObject.CompareTag("Terrain"))
+        {
+            
+            Destroy(gameObject);
+        }
 
     }
 }
