@@ -18,7 +18,7 @@ public class Controls : MonoBehaviour {
     bool facingRight = true;
     public Rigidbody2D rb;
     Animator anim;
-
+    public AudioSource jumpAudio;
 
 
     bool grounded = false;
@@ -63,33 +63,39 @@ public class Controls : MonoBehaviour {
 
     }
     void Update() {
-        if (grounded && Input.GetKeyDown(KeyCode.Space)|| grounded && Space) {
-            anim.SetBool("Ground", false);
-            rb.AddForce(new Vector2(0, jumpForce));
-            Space = false;
-        }
-        moveVelocity = 0f;
-        if (Input.GetKey(KeyCode.LeftArrow) || moveleft)
+        if (HealthController.gameOver == false)
         {
-            anim.SetBool("Speed", true);
-            moveVelocity = -speed;
-        }
-        else if (Input.GetKey(KeyCode.RightArrow) || moveright)
-        {
-            anim.SetBool("Speed", true);
-            moveVelocity = speed; 
-        }
-        rb.velocity = new Vector2(moveVelocity, rb.velocity.y);
-        if ((Input.GetKey(KeyCode.RightArrow) || moveright) && !facingRight)
-        {
-            Flip();
-        }
-        else if ((Input.GetKey(KeyCode.LeftArrow) || moveleft) && facingRight)
-            Flip();
+            if (grounded && Input.GetKeyDown(KeyCode.Space) || grounded && Space)
+            {
+                jumpAudio.Play();
+                anim.SetBool("Ground", false);
+                rb.AddForce(new Vector2(0, jumpForce));
+                Space = false;
+            }
+            moveVelocity = 0f;
+            if (Input.GetKey(KeyCode.LeftArrow) || moveleft)
+            {
+                anim.SetBool("Speed", true);
+                moveVelocity = -speed;
+            }
+            else if (Input.GetKey(KeyCode.RightArrow) || moveright)
+            {
+                anim.SetBool("Speed", true);
+                moveVelocity = speed;
+            }
+            rb.velocity = new Vector2(moveVelocity, rb.velocity.y);
+            if ((Input.GetKey(KeyCode.RightArrow) || moveright) && !facingRight)
+            {
+                Flip();
+            }
+            else if ((Input.GetKey(KeyCode.LeftArrow) || moveleft) && facingRight)
+                Flip();
 
-        if ((Input.GetKeyDown(KeyCode.C)|| Shoot) && allowShoot) {
-            Fire();
-           
+            if ((Input.GetKeyDown(KeyCode.C) || Shoot) && allowShoot)
+            {
+                Fire();
+
+            }
         }
     }
 

@@ -19,13 +19,14 @@ public class EnemyHealthController : MonoBehaviour {
         if (enemyHealth <= 0)
         {
             ScoreManager.addPoints(PointsWhenKilled);
+            ScoreManager.addKills(1);
             Destroy(gameObject);
         }
 
     }
     public void hurtEnemy(int DamageToGive)
     {
-
+        GetComponent<AudioSource>().Play();
         enemyHealth -= DamageToGive;
 
     }

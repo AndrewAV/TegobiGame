@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour {
     public static int score;
+    public static int kills;
     Text text;
 
     void Start()
     {
         text = GetComponent<Text>();
         score = 0;
-
+        kills = 0;
     }
     void Update() {
         if (score < 0)
@@ -24,6 +25,11 @@ public class ScoreManager : MonoBehaviour {
     public static void addPoints(int points)
     {
         score += points;
+
+    }
+    public static void addKills(int x)
+    {
+        kills += x;
 
     }
     public static void removePoints(int points)

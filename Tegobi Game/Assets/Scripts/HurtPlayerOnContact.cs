@@ -5,8 +5,9 @@ using UnityEngine;
 public class HurtPlayerOnContact : MonoBehaviour {
 
     public int damage;
-	// Use this for initialization
-	void Start () {
+    public AudioSource hurtTegobi;
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -16,9 +17,10 @@ public class HurtPlayerOnContact : MonoBehaviour {
 	}
     void OnCollisionEnter2D(Collision2D other)
     {
-
+        
         if (other.gameObject.CompareTag("Player"))
         {
+            hurtTegobi.Play();
             HealthController.hurtPlayer(damage);
         }
 

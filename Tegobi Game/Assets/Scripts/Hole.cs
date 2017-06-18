@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Hole : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
+    public GameObject GameOverUI;
+    public static bool gameOver = false;
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -25,8 +26,18 @@ public class Hole : MonoBehaviour {
         if (other.gameObject.CompareTag("Player"))
         {
 
-            Destroy(other.gameObject);
-            SceneManager.LoadScene("1");
+
+            GameOverController.timePlayed = Time.timeSinceLevelLoad;
+            gameOver = true;
+            GameOverUI.SetActive(true);
+
+            GameObject[] objs;
+            objs = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach (GameObject Enemy in objs)
+            {
+                Destroy(Enemy);
+            }
+            Time.timeScale = 0;
         }
 
     }
